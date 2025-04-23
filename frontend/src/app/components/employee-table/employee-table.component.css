@@ -1,0 +1,184 @@
+/* Container */
+.manage-employees {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+/* Back Button Styling */
+.back-button {
+  margin: 20px 0;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.back-button button {
+  background-color: #007bff;
+  color: rgb(247, 245, 245);
+  font-size: 0.5rem;
+  padding: 10px 12px; /* Adjusted size */
+  border: none;
+  border-radius: 50%; /* Round shape */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center icon inside the button */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 50px; /* Set width and height for a perfect circle */
+  height: 50px;
+}
+
+.back-button button i {
+  font-size: 1.5rem;
+  margin-right: 0.2rem; /* Adjust the icon size */
+}
+
+/* Hover effect for the back button */
+.back-button button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Focus effect for accessibility */
+.back-button button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+/* Styling for form textarea (bio) */
+.full-width-textarea {
+  flex: 1 1 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  resize: vertical;
+  margin-top: 0.5rem;
+}
+
+/* Group buttons in a new row */
+.form-buttons {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-buttons button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-buttons button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+.form-buttons button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.form-buttons button[type="button"] {
+  background-color: #6c757d;
+  color: white;
+}
+
+.form-buttons button[type="button"]:hover {
+  background-color: #5a6268;
+}
+
+
+/* Styling for form inputs */
+form input {
+  flex: 1 1 300px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+  font-size: 1rem;
+}
+
+/* Focus styles for form inputs */
+form input:focus {
+  border-color: #1976d2;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #f5f5f5;
+  text-align: left;
+}
+
+th, td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+td {
+  vertical-align: middle;
+}
+
+tbody tr:hover {
+  background-color: #f0f8ff;
+}
+
+table button {
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: white;
+}
+
+table button:first-child {
+  background-color: #ffb300;
+}
+
+table button:last-child {
+  background-color: #e53935;
+}
+
+table button:hover:first-child {
+  background-color: #ffa000;
+}
+
+table button:hover:last-child {
+  background-color: #d32f2f;
+}
+
+/* Heading */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: 600;
+}

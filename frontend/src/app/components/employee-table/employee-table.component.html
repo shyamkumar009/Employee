@@ -1,0 +1,61 @@
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<div class="back-button">
+  <button (click)="goBack()">
+    <i class="fa fa-arrow-left"></i> 
+  </button>
+</div>
+
+<div class="manage-employees">
+  <h2>Manage Employees</h2>
+
+  <form (ngSubmit)="save()" #employeeForm="ngForm">
+    <input type="text" placeholder="Name" [(ngModel)]="newEmployee.name" name="name" required />
+    <input type="email" placeholder="Email" [(ngModel)]="newEmployee.email" name="email" required />
+    <input type="text" placeholder="Position" [(ngModel)]="newEmployee.position" name="position" />
+    <input type="text" placeholder="Phone" [(ngModel)]="newEmployee.phone" name="phone" />
+    <input type="text" placeholder="Skills (comma separated)" [(ngModel)]="newEmployee.skills" name="skills" />
+    <input type="text" placeholder="Image URL" [(ngModel)]="newEmployee.image" name="imageUrl" />
+
+    <!-- Full-width bio textarea -->
+    <textarea
+  class="full-width-textarea"
+  placeholder="Bio"
+  [(ngModel)]="newEmployee.bio"
+  name="bio"
+  required>
+</textarea>
+
+
+    <!-- Buttons on a separate line -->
+    <div class="form-buttons">
+      <button type="submit"> Employee</button>
+      <button type="button" (click)="resetForm()">Cancel</button>
+    </div>
+  </form>
+
+  <!-- <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Skills</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees$ | async">
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.skills.join(', ') }}</td>
+
+
+        <td>
+          <button (click)="edit(emp)">Edit</button>
+          <button (click)="delete(emp._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->

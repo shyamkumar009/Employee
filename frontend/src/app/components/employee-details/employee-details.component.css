@@ -1,0 +1,212 @@
+/* Global Styling */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f7f7f7;
+}
+
+/* Back Button Styling */
+.back-button {
+  margin: 20px 0;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.back-button button {
+  background-color: #007bff;
+  color: rgb(247, 245, 245);
+  font-size: 0.5rem;
+  padding: 10px 12px; /* Adjusted size */
+  border: none;
+  border-radius: 50%; /* Round shape */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center icon inside the button */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 50px; /* Set width and height for a perfect circle */
+  height: 50px;
+}
+
+.back-button button i {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin: 0;
+  /* Adjust the icon size */
+}
+
+/* Hover effect for the back button */
+.back-button button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Focus effect for accessibility */
+.back-button button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+/* Employee Details */
+.details-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.circle-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+.details-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.details-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.details-container img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.details-container p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.details-container p strong {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Buttons */
+.form-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1rem;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 45%;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #4556a0;
+}
+
+button:active {
+  background-color: #3e4d8e;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.4);
+}
+
+/* Chat Modal */
+.chat-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.chat-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.chat-container button {
+  margin-top: 15px;
+  background-color: #dc3545;
+  color: white;
+}
+
+.chat-container button:hover {
+  background-color: #c82333;
+}
+
+/* Loading Template */
+ng-template #loading {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #999;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .details-container {
+    padding: 20px;
+  }
+
+  .details-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .details-container p {
+    font-size: 0.9rem;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .circle-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    padding: 12px;
+  }
+}

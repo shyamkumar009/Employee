@@ -1,0 +1,26 @@
+<header class="app-header">
+  <h1>Employee Management System</h1>
+</header>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+<input type="text" placeholder="Search by name, email, or skills" [(ngModel)]="searchText" (input)="search()" />
+
+<div class="card-container">
+  <div class="card" *ngFor="let employee of filteredEmployees$ | async">
+    <img [src]="employee.image" alt="Employee Image" />
+    <h3>{{ employee.name }}</h3>
+    <p>{{ employee.position }}</p>
+    <p>{{ employee.email }}</p>
+    <p>Skills: {{ employee.skills.join(', ') }}</p>
+    <button [routerLink]="['/details', employee._id]">View Details</button>
+  </div>
+</div>
+
+<button class="fab" [routerLink]="'/crud'">
+  <span class="fab-icon">+</span>
+</button>
+
+  
+  

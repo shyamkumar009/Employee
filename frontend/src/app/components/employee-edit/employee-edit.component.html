@@ -1,0 +1,16 @@
+<div *ngIf="employee">
+  <h2>Edit Employee</h2>
+  <form (ngSubmit)="save()">
+    <img [src]="employee.image" alt="Employee Image" />
+    
+    <input type="text" [(ngModel)]="employee.name" name="name" required placeholder="Name" />
+    <input type="email" [(ngModel)]="employee.email" name="email" required placeholder="Email" />
+    <input type="text" [(ngModel)]="employee.position" name="position" placeholder="Position" />
+    <input type="text" [(ngModel)]="employee.phone" name="phone" placeholder="Phone" />
+    <input type="text" [(ngModel)]="employee.skills" name="skills" placeholder="Skills" />
+    <input type="text" [(ngModel)]="employee.image" name="image" placeholder="Image URL" />
+    <textarea [(ngModel)]="employee.bio" name="bio" placeholder="Bio"></textarea>
+
+    <button type="submit">Save Changes</button>
+  </form>
+</div>

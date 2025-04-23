@@ -1,0 +1,142 @@
+/* General Reset and Box Sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8; /* Light grey background */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container for the edit form */
+div {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Edit Employee heading */
+h2 {
+    text-align: center;
+    color: #2c3e50; /* Dark blue-grey */
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+/* Image styling */
+img {
+    display: block;
+    margin: 0 auto 25px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 5px solid  #007bff/* Light blue border */
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Input and textarea styling */
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #444;
+    font-family: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #777;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Save Changes button */
+button[type="submit"] {
+    background-color: #007bff; /* Blue */
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button[type="submit"]:active {
+    background-color: #004080; /* Even darker blue on active */
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+button[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Focus ring */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    div {
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    button[type="submit"] {
+        padding: 10px;
+        font-size: 0.95rem;
+        border-radius: 5px;
+    }
+
+    form {
+        gap: 15px;
+    }
+}

@@ -1,0 +1,20 @@
+
+  <h2 *ngIf="employee$ | async as employee">Chat with {{employee.name}}</h2>
+
+  <div class="chat-messages">
+    <div *ngFor="let msg of messages" class="chat-message">
+      {{ msg }}
+    </div>
+  </div>
+
+  <form (ngSubmit)="sendMessage(newMessage)" class="chat-form">
+    <input
+      type="text"
+      [(ngModel)]="newMessage"
+      name="message"
+      placeholder="Type your message..."
+      required
+    />
+    <button type="submit">Send</button>
+  </form>
+

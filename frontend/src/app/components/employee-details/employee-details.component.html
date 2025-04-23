@@ -1,0 +1,45 @@
+<!-- Navigation Buttons Container -->
+<div class="top-buttons">
+  <!-- Back Button -->
+  <div class="back-button">
+    <button class="circle-button" (click)="goBack()">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    
+  </div>
+</div>
+
+<!-- Employee Details -->
+<div *ngIf="employee$ | async as employee; else loading" class="details-container">
+  <img [src]="employee.image" alt="Employee Image" />
+  <h2>{{ employee.name }}</h2>
+  <p><strong>Email:</strong> {{ employee.email }}</p>
+  <p><strong>Position:</strong> {{ employee.position }}</p>
+  <p><strong>Phone:</strong> {{ employee.phone }}</p>
+  <p><strong>Skills:</strong> {{ employee.skills.join(', ') }}</p>
+  <p><strong>Bio:</strong> {{ employee.bio }}</p>
+
+  <!-- Edit and Delete buttons -->
+  <div class="form-buttons">
+    <button (click)="edit(employee)">Edit</button>
+    <button (click)="delete(employee._id)">Delete</button>
+  </div>
+</div>
+
+<!-- Loading template -->
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
+
+<!-- Chat Button at the Bottom -->
+<button id="messageButton" class="circle-button" (click)="toggleChatModel()">
+  <i class="fa fa-comment-dots"></i>
+</button>
+
+<!-- Chat Modal -->
+<div *ngIf="isChatModalOpen" class="chat-modal">
+  <div class="chat-container">
+    <app-employee-chat></app-employee-chat>
+    <button (click)="toggleChatModel()">Close</button>
+  </div>
+</div>
