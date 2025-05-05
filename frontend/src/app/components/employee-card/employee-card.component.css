@@ -1,152 +1,220 @@
-/* Global Styling */
+/* Base styles and typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(120deg, #f0f2f5, #e0e7ff);
+  background-color: #f5f7fa;
+  color: #333;
 }
 
-/* Header Styling */
+/* Header styling */
 .app-header {
-  background: linear-gradient(to right, #007bff, #00c6ff);
+  background-color: #004080;
   color: white;
-  padding: 30px 40px;
+  padding: 1.5rem 2rem;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-weight: 600;
+  font-size: 1.8rem;
 }
 
-.app-header h1 {
-  margin: 0;
-  font-size: 32px;
-  font-weight: 700;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 1px;
-}
-
-/* Search Input */
+/* Search Input styling */
 input[type="text"] {
-  width: 90%;
-  max-width: 500px;
-  padding: 12px 15px;
-  margin: 25px auto;
   display: block;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
-  transition: 0.3s;
+  width: 90%;
+  max-width: 600px;
+  margin: 1.5rem auto 2rem auto;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1.8px solid #ccc;
+  border-radius: 30px;
+  outline-color: #004080;
+  transition: border-color 0.3s ease;
 }
 
 input[type="text"]:focus {
-  outline: none;
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  border-color: #004080;
+  box-shadow: 0 0 8px rgba(0, 64, 128, 0.3);
 }
 
-/* Card Container */
+/* Card container grid layout */
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 25px;
-  padding: 30px;
+  gap: 1.8rem;
+  padding: 0 2rem 3rem 2rem;
+  /* 4 columns on large screens by default */
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
 }
 
-/* Card Styling with Glass Effect */
+/* Single card styling */
 .card {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: white;
+  width: 100%;
+  max-width: 320px;
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  padding: 1.5rem 1.3rem 2rem 1.3rem;
+  box-sizing: border-box;
+  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgb(0 0 0 / 0.15);
 }
 
-/* Card Image */
+/* Employee Image inside card */
 .card img {
-  display: block;
-  margin: 20px auto;
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  border: 4px solid #007bff;
+  object-fit: cover;
+  margin-bottom: 1.1rem;
+  border: 3px solid #004080;
 }
 
-/* Text Styling */
+/* Employee Name */
 .card h3 {
-  font-size: 22px;
-  margin: 10px 0;
-  text-align: center;
-  color: #222;
+  margin: 0.3rem 0 0.55rem 0;
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: #004080;
 }
 
+/* Position, Email, Skills paragraphs */
 .card p {
-  font-size: 15px;
+  margin: 0.25rem 0;
+  font-weight: 400;
+  font-size: 0.93rem;
   color: #555;
-  margin: 5px 15px;
-  text-align: center;
+  line-height: 1.25rem;
+  word-wrap: break-word;
 }
 
-/* View Details Button */
+/* Button styling inside card */
 .card button {
-  display: block;
-  width: 85%;
-  margin: 15px auto 25px;
-  padding: 10px;
-  background: linear-gradient(to right, #007bff, #00c6ff);
+  margin-top: 1.3rem;
+  background-color: #004080;
   color: white;
-  font-size: 15px;
   border: none;
+  padding: 0.6rem 1.3rem;
   border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: background-color 0.25s ease;
+  align-self: center;
+  width: 100%;
+  max-width: 140px;
 }
 
-.card button:hover {
-  background: linear-gradient(to right, #0056b3, #0088cc);
+.card button:hover,
+.card button:focus {
+  background-color: #003060;
+  outline: none;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-  .card-container {
-    grid-template-columns: 1fr;
-    padding: 10px;
-  }
-
-  .card {
-    margin-bottom: 20px;
-  }
-}
-
-
+/* Floating Action Button (FAB) styling */
 .fab {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background-color: #007bff; /* Blue color */
+  bottom: 30px;
+  right: 30px;
+  background-color: #004080;
   color: white;
   border: none;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  font-weight: 600;
+  box-shadow: 0 6px 15px rgba(0, 64, 128, 0.4);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 1000;
 }
 
-.fab:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+.fab:hover,
+.fab:focus {
+  background-color: #003060;
+  box-shadow: 0 8px 20px rgba(0, 48, 96, 0.6);
+  outline: none;
 }
 
 .fab-icon {
-  font-size: 36px; /* Larger '+' symbol */
-  font-weight: bold;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Responsive breakpoints */
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 991px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 1.5rem 2.5rem 1.5rem;
+  }
+}
+
+/* Small devices (mobile portrait, 576px and up) */
+@media (max-width: 767px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem 2rem 1rem;
+  }
+  
+  input[type="text"] {
+    width: 95%;
+  }
+  
+  .card {
+    max-width: 100%;
+    padding: 1.3rem 1rem 1.8rem 1rem;
+  }
+
+  .card button {
+    max-width: 100%;
+  }
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 399px) {
+  .card-container {
+    grid-template-columns: 1fr;
+    padding: 0 0.75rem 1.5rem 0.75rem;
+  }
+  
+  .app-header {
+    font-size: 1.5rem;
+    padding: 1rem 1rem;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+  
+  .fab {
+    width: 48px;
+    height: 48px;
+    font-size: 1.6rem;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* Accessibility: focus visible */
+input[type="text"]:focus-visible,
+.card button:focus-visible,
+.fab:focus-visible {
+  outline: 2.5px solid #004080;
+  outline-offset: 3px;
 }

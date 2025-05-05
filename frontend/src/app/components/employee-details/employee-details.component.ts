@@ -51,7 +51,7 @@ export class EmployeeDetailsComponent implements OnInit {
     this.employeeService.deleteEmployee(id).subscribe({
       next: () => {
         alert('Employee deleted successfully');
-        this.router.navigate(['/employees']); // Navigate back to the employee list
+        this.router.navigate(['/card']); // Navigate back to the employee list
       },
       error: (err) => {
         console.error('Error deleting employee:', err);

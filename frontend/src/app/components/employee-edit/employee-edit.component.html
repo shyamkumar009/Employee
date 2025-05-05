@@ -1,4 +1,13 @@
-<div *ngIf="employee">
+<div class="top-buttons">
+  <div class="back-button">
+    <button class="circle-button" (click)="goBack()">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+  </div>
+</div>
+
+<div>
+  <!-- The rest of your form goes here -->
   <h2>Edit Employee</h2>
   <form (ngSubmit)="save()">
     <img [src]="employee.image" alt="Employee Image" />

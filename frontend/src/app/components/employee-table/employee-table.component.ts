@@ -18,6 +18,11 @@ export class EmployeeTableComponent implements OnInit {
   employee$!: Observable<Employee>;
   newEmployee: Employee = new Employee();
   editMode: boolean = false;
+  selectedFile: File | null = null;
+
+  onFileSelected(event:any):void{
+    this.selectedFile = event.target.files[0];
+  }
 
   constructor(
     private employeeService: EmployeeService,
@@ -39,21 +44,60 @@ export class EmployeeTableComponent implements OnInit {
   }
 
   // Save new or updated employee
+  // save(): void {
+  //   if (this.editMode) {
+  //     // If we're in edit mode, update the employee
+  //     this.employeeService.updateEmployee(this.newEmployee).subscribe(() => {
+  //       this.resetForm();
+  //       alert("Employee updated successfully");
+  //       this.loadEmployees();  // Reload employees after update
+  //     });
+  //   } else {
+  //     // If we're adding a new employee, use addEmployee method
+  //     this.employeeService.addEmployee({ ...this.newEmployee }).subscribe(() => {
+  //       this.resetForm();
+  //       alert("Employee added successfully");
+  //       this.router.navigate(['./card'])
+  //       this.loadEmployees();  // Reload employees after add
+  //     });
+  //   }
+  // }
+
   save(): void {
+    const formData = new FormData();
+  
+    // Append fields
+    formData.append('name', this.newEmployee.name);
+    formData.append('email', this.newEmployee.email);
+    formData.append('position', this.newEmployee.position);
+    formData.append('phone', this.newEmployee.phone);
+    formData.append('bio', this.newEmployee.bio);
+    if (typeof this.newEmployee.skills === 'string') {
+      this.newEmployee.skills = (this.newEmployee.skills as string).split(',').map(skill => skill.trim());
+    }
+    
+    // Handle skills as comma-separated string or array
+    // const skillsArray = this.newEmployee.skills?.split(',').map((skill: string) => skill.trim()) || [];
+  
+    formData.append('skills', JSON.stringify(this.newEmployee.skills));
+  
+    // Append the file if selected
+    if (this.selectedFile) {
+      formData.append('image', this.selectedFile);
+    }
+  
     if (this.editMode) {
-      // If we're in edit mode, update the employee
-      this.employeeService.updateEmployee(this.newEmployee).subscribe(() => {
+      this.employeeService.updateEmployeeFormData(formData, this.newEmployee._id!.toString()).subscribe(() => {
         this.resetForm();
         alert("Employee updated successfully");
-        this.loadEmployees();  // Reload employees after update
+        this.loadEmployees();
       });
     } else {
-      // If we're adding a new employee, use addEmployee method
-      this.employeeService.addEmployee({ ...this.newEmployee }).subscribe(() => {
+      this.employeeService.addEmployeeFormData(formData).subscribe(() => {
         this.resetForm();
         alert("Employee added successfully");
-        this.router.navigate(['./card'])
-        this.loadEmployees();  // Reload employees after add
+        this.router.navigate(['./card']);
+        this.loadEmployees();
       });
     }
   }

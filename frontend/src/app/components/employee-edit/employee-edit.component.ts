@@ -30,6 +30,10 @@ export class EmployeeEditComponent implements OnInit {
     }
   }
 
+  goBack(): void {
+    this.router.navigate(['/card']);
+  }
+
   save(): void {
     if (this.employeeId) {
       this.employeeService.updateEmployee(this.employee).subscribe(() => {

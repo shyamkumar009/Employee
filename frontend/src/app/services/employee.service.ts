@@ -28,6 +28,14 @@ export class EmployeeService {
     return this.http.put<Employee>(`${this.apiUrl}/${employee._id}`, employee);
   }
 
+  addEmployeeFormData(formData: FormData) {
+    return this.http.post<Employee>(`${this.apiUrl}`, formData);
+  }
+  
+  updateEmployeeFormData(formData: FormData, id: string) {
+    return this.http.put<Employee>(`${this.apiUrl}/${id}`, formData);
+  }
+  
   deleteEmployee(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }

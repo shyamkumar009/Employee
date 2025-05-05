@@ -1,142 +1,152 @@
-/* General Reset and Box Sizing */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* ==== Global Reset ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f8; /* Light grey background */
-    color: #333;
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* Container for the edit form */
-div {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 600px;
-}
-
-/* Edit Employee heading */
-h2 {
-    text-align: center;
-    color: #2c3e50; /* Dark blue-grey */
-    margin-bottom: 30px;
-    font-size: 2.2rem;
-    font-weight: 500;
-}
-
-/* Image styling */
-img {
-    display: block;
-    margin: 0 auto 25px;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    border: 5px solid  #007bff/* Light blue border */
-}
-
-/* Form styling */
+/* ==== Form Container ==== */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: linear-gradient(145deg, #ffffff, #f0f4ff);
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 64, 128, 0.15);
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
 }
 
-/* Input and textarea styling */
+/* ==== Heading ==== */
+h2 {
+  text-align: center;
+  color: #003060;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-shadow: 1px 2px 4px rgba(0, 64, 128, 0.15);
+}
+
+/* ==== Image Preview ==== */
+form > img {
+  display: block;
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem auto;
+  border: 4px solid #004080;
+  box-shadow: 0 6px 16px rgba(0, 64, 128, 0.3);
+  transition: transform 0.3s ease;
+}
+form > img:hover {
+  transform: scale(1.07);
+}
+
+/* ==== Input Fields ==== */
 input[type="text"],
 input[type="email"],
 textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-    color: #444;
-    font-family: inherit;
+  width: 100%;
+  padding: 0.85rem 1.2rem;
+  margin-bottom: 1rem;
+  border-radius: 30px;
+  border: 2px solid #ccd6e0;
+  font-size: 1rem;
+  background-color: #f9faff;
+  transition: 0.3s ease;
+  font-family: inherit;
+}
+input:focus,
+textarea:focus {
+  border-color: #004080;
+  box-shadow: 0 0 10px rgba(0, 64, 128, 0.3);
+  outline: none;
 }
 
+/* ==== Placeholder ==== */
 input::placeholder,
 textarea::placeholder {
-    color: #777;
+  color: #aaa;
+  font-weight: 400;
 }
 
-textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-/* Save Changes button */
+/* ==== Submit Button ==== */
 button[type="submit"] {
-    background-color: #007bff; /* Blue */
-    color: white;
-    font-size: 1.1rem;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-weight: 500;
+  display: block;
+  width: 100%;
+  background: linear-gradient(90deg, #0056b3, #003060);
+  color: white;
+  font-size: 1.1rem;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 64, 128, 0.5);
+  transition: all 0.3s ease;
 }
-
 button[type="submit"]:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(90deg, #004080, #001f40);
+  box-shadow: 0 10px 26px rgba(0, 41, 82, 0.6);
 }
 
-button[type="submit"]:active {
-    background-color: #004080; /* Even darker blue on active */
-    transform: translateY(0);
-    box-shadow: none;
+/* ==== Top Nav Buttons ==== */
+.top-buttons {
+  background-color: #004080;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 64, 128, 0.2);
+}
+.back-button {
+  display: flex;
+}
+.circle-button {
+  width: 50px;
+  height: 50px;
+  background-color: #003060;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 48, 96, 0.5);
+}
+.circle-button:hover {
+  background-color: #001f40;
+  box-shadow: 0 6px 16px rgba(0, 32, 64, 0.6);
 }
 
-button[type="submit"]:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Focus ring */
-}
-
-/* Responsive adjustments */
+/* ==== Responsive ==== */
 @media (max-width: 768px) {
-    div {
-        padding: 30px;
-        border-radius: 10px;
-    }
+  form {
+    max-width: 90%;
+    padding: 2rem;
+  }
 
-    h2 {
-        font-size: 2rem;
-        margin-bottom: 25px;
-    }
+  form > img {
+    width: 100px;
+    height: 100px;
+  }
 
-    img {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 20px;
-    }
+  h2 {
+    font-size: 1.7rem;
+  }
+}
+@media (max-width: 420px) {
+  form > img {
+    width: 90px;
+    height: 90px;
+  }
 
-    input[type="text"],
-    input[type="email"],
-    textarea,
-    button[type="submit"] {
-        padding: 10px;
-        font-size: 0.95rem;
-        border-radius: 5px;
-    }
-
-    form {
-        gap: 15px;
-    }
+  button[type="submit"] {
+    font-size: 1rem;
+  }
 }

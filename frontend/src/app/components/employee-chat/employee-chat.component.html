@@ -1,7 +1,7 @@
 
   <h2 *ngIf="employee$ | async as employee">Chat with {{employee.name}}</h2>
 
-  <div class="chat-messages">
+  <div class="Email-messaging">
     <div *ngFor="let msg of messages" class="chat-message">
       {{ msg }}
     </div>
@@ -15,6 +15,6 @@
       placeholder="Type your message..."
       required
     />
-    <button type="submit">Send</button>
+    <button type="submit"></button>
   </form>
 

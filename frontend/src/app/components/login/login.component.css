@@ -1,0 +1,245 @@
+body {
+	margin: 0;
+	color: #6a6f8c;
+	background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+	font: 600 16px/18px 'Poppins', sans-serif;
+	overflow-x: hidden;
+	position: relative;
+}
+
+/* Floating circles background */
+body::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url('https://www.transparenttextures.com/patterns/cubes.png') repeat;
+	opacity: 0.05;
+	z-index: 0;
+}
+
+.login-container {
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+	z-index: 1;
+}
+
+/* Left panel - Welcome */
+.left-panel {
+	flex: 1;
+	background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+	color: #fff;
+	padding: 60px 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	position: relative;
+	animation: slideInLeft 1s ease forwards;
+}
+
+.left-panel h1 {
+	font-size: 48px;
+	margin-bottom: 20px;
+	animation: float 3s ease-in-out infinite;
+}
+
+.left-panel p {
+	font-size: 20px;
+	line-height: 1.6;
+	max-width: 400px;
+}
+
+/* Add quote box */
+.left-panel::after {
+	content: "“The journey of a thousand miles begins with a single step.”";
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 18px;
+	font-style: italic;
+	color: rgba(255, 255, 255, 0.7);
+	max-width: 80%;
+	text-align: center;
+	animation: fadeIn 3s ease forwards;
+}
+
+/* Right panel - Login Form */
+.right-panel {
+	flex: 1;
+	background: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(10px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+	animation: slideInRight 1s ease forwards;
+}
+
+/* Frosted login card */
+.login-wrap {
+	width: 100%;
+	max-width: 400px;
+	min-height: 600px;
+	background: rgba(255, 255, 255, 0.15);
+	border-radius: 20px;
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	padding: 50px 30px;
+	position: relative;
+	border: 2px solid transparent;
+	background-clip: padding-box;
+	animation: fadeIn 2s ease forwards;
+}
+
+/* Add animated gradient border */
+.login-wrap::before {
+	content: "";
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+	background: linear-gradient(45deg, #6a11cb, #2575fc, #6a11cb);
+	border-radius: 22px;
+	z-index: -1;
+	background-size: 400% 400%;
+	animation: gradientAnimation 8s ease infinite;
+}
+
+/* Inside Form */
+.login-html {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+}
+.login-html .tab {
+	font-size: 22px;
+	margin-right: 15px;
+	padding-bottom: 5px;
+	margin: 0 15px 10px 0;
+	display: inline-block;
+	border-bottom: 2px solid transparent;
+	cursor: pointer;
+	color: #fff;
+	transition: all 0.3s ease;
+}
+.login-html .tab:hover {
+	color: #ffeb3b;
+	border-color: #ffeb3b;
+	transform: scale(1.05);
+}
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab {
+	color: #fff;
+	border-color: #fff;
+	font-weight: bold;
+}
+
+/* Form Fields */
+.login-form {
+	min-height: 345px;
+	position: relative;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+	margin-top: 30px;
+}
+.login-form .group {
+	margin-bottom: 20px;
+}
+.login-form .group .input,
+.login-form .group .button {
+	width: 100%;
+	padding: 15px;
+	border-radius: 30px;
+	border: none;
+	outline: none;
+	background: rgba(255, 255, 255, 0.2);
+	color: #fff;
+	font-size: 16px;
+	transition: 0.3s ease;
+}
+.login-form .group .input:focus {
+	background: rgba(255, 255, 255, 0.4);
+	box-shadow: 0 0 5px #2575fc;
+}
+.login-form .group .button {
+	background: #2575fc;
+	cursor: pointer;
+}
+.login-form .group .button:hover {
+	background: #6a11cb;
+}
+.hr {
+	height: 2px;
+	margin: 40px 0;
+	background: rgba(255, 255, 255, 0.2);
+}
+.foot-lnk {
+	text-align: center;
+	color: #fff;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+	from {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideInRight {
+	from {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes float {
+	0% { transform: translateY(0px); }
+	50% { transform: translateY(-10px); }
+	100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes gradientAnimation {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.login-container {
+		flex-direction: column;
+	}
+	.left-panel {
+		height: 250px;
+	}
+	.left-panel h1 {
+		font-size: 32px;
+	}
+	.left-panel p {
+		font-size: 16px;
+	}
+	.left-panel::after {
+		font-size: 14px;
+	}
+}

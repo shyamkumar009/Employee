@@ -1,0 +1,85 @@
+/* Container styling for the form */
+form {
+  max-width: 400px; /* Set maximum width for the form */
+  margin: 2rem auto; /* Center the form and add vertical spacing */
+  padding: 28px 32px; /* Inner padding for the form */
+  background-color: #f9f9f9; /* Light background color */
+  border-radius: 8px; /* Rounded corners for the form */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-family: 'Poppins', sans-serif; /* Font family for readability */
+}
+
+/* Heading style */
+h2 {
+  text-align: center; /* Center the heading */
+  color: #333; /* Darker text color for contrast */
+  margin-bottom: 1.5rem; /* Space below the heading */
+}
+
+/* Input fields styling */
+input {
+  width: 100%; /* Full width inputs */
+  padding: 12px 14px; /* Inner padding for inputs */
+  margin-bottom: 12px; /* Space between inputs */
+  border: 2px solid #ccc; /* Light border */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 1rem; /* Base font size */
+  transition: border-color 0.3s ease; /* Transition for border color on focus */
+}
+
+/* Focus styles for inputs */
+input:focus {
+  border-color: #4caf50; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Green glow effect */
+}
+
+/* Error message styling */
+.error {
+  color: #e53935; /* Red color for error messages */
+  font-size: 0.9em; /* Slightly smaller font size */
+  margin-bottom: 12px; /* Space below error messages */
+}
+
+/* Button styling */
+button[type="submit"] {
+  width: 100%; /* Full width button */
+  padding: 12px; /* Inner padding for button */
+  background-color: #4caf50; /* Green background color */
+  color: white; /* White text color */
+  border: none; /* No border */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 1rem; /* Base font size */
+  font-weight: 600; /* Bold font */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+/* Button hover effect */
+button[type="submit"]:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}
+
+/* Link to login */
+p {
+  text-align: center; /* Center align the paragraph */
+  margin-top: 20px; /* Space above the paragraph */
+}
+
+/* Button for login link */
+button:not([type="submit"]) {
+  padding: 8px 16px; /* Inner padding for the secondary button */
+  background-color: transparent; /* Transparent background */
+  border: 2px solid #4caf50; /* Green border */
+  border-radius: 6px; /* Rounded corners */
+  color: #4caf50; /* Green text */
+  font-size: 0.9em; /* Slightly smaller font size */
+  cursor: pointer;
+  justify-content: center; /* Pointer cursor */
+}
+
+/* Hover effect for login link button */
+button:not([type="submit"]):hover {
+  background-color: #4caf50; /* Green background on hover */
+  color: white; /* White text on hover */
+}

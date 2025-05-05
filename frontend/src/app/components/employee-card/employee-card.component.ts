@@ -4,7 +4,7 @@ import { Employee } from '../../models/employee.model';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule,  } from '@angular/router';
 import { firstValueFrom, Observable, of } from 'rxjs';
 
 @Component({
@@ -14,6 +14,7 @@ import { firstValueFrom, Observable, of } from 'rxjs';
   templateUrl: './employee-card.component.html',
   styleUrls: ['./employee-card.component.css']
 })
+
 export class EmployeeCardComponent implements OnInit {
   employees: Employee[] = [];
   // filteredEmployees: Employee[] = [];
@@ -28,6 +29,7 @@ export class EmployeeCardComponent implements OnInit {
     //console.log( firstValueFrom(this.filteredEmployees$));
     this.loadEmployees();
   }
+
   loadEmployees() {
     this.employeeService.getEmployees().subscribe((data) => {
       this.employees = data;
@@ -35,8 +37,6 @@ export class EmployeeCardComponent implements OnInit {
     });
   }
   
-  
-
   search() {
     const text = this.searchText.toLowerCase().trim();
   
@@ -48,4 +48,5 @@ export class EmployeeCardComponent implements OnInit {
   
     this.filteredEmployees$ = of(filtered);
   }
+  
 }

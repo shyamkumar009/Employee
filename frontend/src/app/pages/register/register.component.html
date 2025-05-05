@@ -1,0 +1,43 @@
+<h2>Register</h2>
+
+<form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+  <input
+    type="text"
+    name="name"
+    [(ngModel)]="user.name"
+    required
+    minlength="3"
+    placeholder="Name"
+  />
+  <div *ngIf="validationMessages.name" class="error">{{ validationMessages.name }}</div>
+
+  <input
+    type="email"
+    name="email"
+    [(ngModel)]="user.email"
+    required
+    placeholder="Email"
+  />
+  <div *ngIf="validationMessages.email" class="error">{{ validationMessages.email }}</div>
+
+  <input
+    type="password"
+    name="password"
+    [(ngModel)]="user.password"
+    required
+    minlength="6"
+    placeholder="Password"
+  />
+  <div *ngIf="validationMessages.password" class="error">{{ validationMessages.password }}</div>
+
+  
+  <!-- <select name="userType" [(ngModel)]="user.userType">
+    <option value="user">User</option>
+    <option value="admin">Admin</option>
+  </select> -->
+
+  <button type="submit">Register</button>
+</form>
+
+<p>Already have an account?</p>
+<button (click)="goToLogin()">Go to Login</button>

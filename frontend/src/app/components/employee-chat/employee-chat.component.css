@@ -1,67 +1,150 @@
-.chat-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 500px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .chat-container h2 {
-    width: 100px; /* or any equal width/height */
-    height: 100px;
-    border-radius: 80%;
-    background-color: #f0f0f0; /* optional */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-    color: #333;
-  }
-  
+/* Chat message container */
+.chat-messages {
+  height: 300px;
+  max-width: 900px;
+  margin: 0 auto 1.8rem auto;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow-y: auto;
+  box-shadow: 0 6px 16px rgb(0 0 0 / 0.1);
+  scrollbar-width: thin;
+  scrollbar-color: #004080 #e0e0e0;
+}
+
+/* Scrollbars styling remain same */
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+.chat-messages::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 8px;
+}
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: #004080;
+  border-radius: 8px;
+}
+
+/* Chat form with input and send button */
+.chat-form {
+  display: flex;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  padding: 0 1rem 1.2rem 1rem;
+  gap: 0.75rem;
+  box-sizing: border-box;
+}
+
+/* Input field styling */
+.chat-form input[type="text"] {
+  flex: 1 1 auto;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #004080;
+  border-radius: 30px;
+  outline-offset: 3px;
+  outline-color: transparent;
+  transition: border-color 0.25s ease;
+}
+
+.chat-form input[type="text"]:focus {
+  border-color: #002952;
+  outline-color: #002952;
+  box-shadow: 0 0 8px rgba(0, 41, 82, 0.4);
+}
+
+/* Circular send button */
+.chat-form button {
+  width: 44px;
+  height: 44px;
+  background-color: #004080;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Create right-pointing arrow using CSS borders */
+.chat-form button::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 12px solid white;
+  /* Slightly shift arrow right inside the circle */
+  margin-left: 2px;
+}
+
+/* Hover/focus effect */
+.chat-form button:hover,
+.chat-form button:focus {
+  background-color: #002952;
+  outline: none;
+}
+
+/* Responsive adjustments */
+
+/* Medium devices */
+@media (max-width: 991px) {
   .chat-messages {
-    max-height: 250px;
-    overflow-y: auto;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+    height: 280px;
+    max-width: 700px;
+    padding: 1rem 1.3rem;
   }
-  
-  .chat-message {
-    background-color: #e1f5fe;
-    padding: 10px;
-    margin-bottom: 8px;
-    border-radius: 5px;
-    font-size: 0.95rem;
-  }
-  
   .chat-form {
-    display: flex;
-    gap: 10px;
+    max-width: 700px;
+    gap: 0.6rem;
   }
-  
-  .chat-form input {
-    flex: 1;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
   .chat-form button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
+    width: 40px;
+    height: 40px;
   }
-  
-  .chat-form button:hover {
-    background-color: #0056b3;
+  .chat-form button::before {
+    border-top-width: 6px;
+    border-bottom-width: 6px;
+    border-left-width: 10px;
   }
-  
+}
+
+/* Small devices */
+@media (max-width: 575px) {
+  .chat-messages {
+    height: 240px;
+    margin: 0 0.7rem 1.4rem 0.7rem;
+    padding: 1rem;
+  }
+  .chat-form {
+    max-width: 100%;
+    padding: 0 0.7rem 1rem 0.7rem;
+  }
+  .chat-form input[type="text"] {
+    font-size: 0.95rem;
+    padding: 0.65rem 0.9rem;
+  }
+  .chat-form button {
+    width: 38px;
+    height: 38px;
+  }
+  .chat-form button::before {
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 8px;
+  }
+}
+
+/* Accessibility focus */
+input[type="text"]:focus-visible,
+button:focus-visible {
+  outline: 3px solid #004080;
+  outline-offset: 3px;
+}

@@ -16,8 +16,12 @@
     <input type="text" placeholder="Position" [(ngModel)]="newEmployee.position" name="position" />
     <input type="text" placeholder="Phone" [(ngModel)]="newEmployee.phone" name="phone" />
     <input type="text" placeholder="Skills (comma separated)" [(ngModel)]="newEmployee.skills" name="skills" />
-    <input type="text" placeholder="Image URL" [(ngModel)]="newEmployee.image" name="imageUrl" />
+    <!-- <input type="text" placeholder="Image URL" [(ngModel)]="newEmployee.image" name="imageUrl" /> -->
 
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+
+<!-- Optional: Show selected file name -->
+<div *ngIf="selectedFile">{{ selectedFile.name }}</div>
     <!-- Full-width bio textarea -->
     <textarea
   class="full-width-textarea"
@@ -30,7 +34,7 @@
 
     <!-- Buttons on a separate line -->
     <div class="form-buttons">
-      <button type="submit"> Employee</button>
+      <button type="submit">Add Employee</button>
       <button type="button" (click)="resetForm()">Cancel</button>
     </div>
   </form>
